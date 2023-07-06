@@ -1,0 +1,19 @@
+.paintingTile {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  margin: 0 8px 8px;
+  border-radius: 4px;
+  background-color: #302F32;
+  color: #EEEEEE;
+  box-shadow: rgba(0, 0, 0, 0.005) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.005) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.05) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  overflow: none;
+}
+
+.image {
+  flex-shrink: 0;
+  width: 80px;
+  margin-right: 24px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}

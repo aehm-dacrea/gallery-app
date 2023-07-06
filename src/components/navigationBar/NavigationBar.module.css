@@ -1,0 +1,29 @@
+.navigationBar {
+  background-color: #333;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.logo {
+  /* align-self: center; */
+}
+
+.homeLink {
+  text-align: left;
+  position: absolute;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+}
+
+.languageLink {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  font-size: 14px;
+  font-weight: 300;
+}

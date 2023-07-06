@@ -1,0 +1,1 @@
+export { PaintingTile } from './PaintingTile';
