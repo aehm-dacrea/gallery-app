@@ -168,3 +168,17 @@ export async function getPainting(roomId: number, paintingId: number): Promise<P
 
   return data.paintingCollection.items[0];
 }
+
+export async function getBigPainting() {
+  const { data } = await apolloClient.query({
+    query: gql`
+      query {
+        asset(id: "L8TmmvPZz9wUVtKJSNfWY") {
+          url
+        }
+      }
+    `
+  });
+
+  return data.asset;
+}

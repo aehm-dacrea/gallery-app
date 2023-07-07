@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+
+  --clip-path-X: 0;
+  --clip-path-Y: 0;
+}
+
+.rearImage {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.3);
+}
+
+
+.bigImage {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  clip-path: circle(50px at var(--clip-path-X) var(--clip-path-Y));
+}
