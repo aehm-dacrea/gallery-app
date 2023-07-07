@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import "@/styles/globals.css";
 
 const openSans = Open_Sans({ subsets: ['latin'] });
-const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ['latin'], weight: "600" });
+const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ['latin'], weight: "400" });
 
 export default function App({ Component, pageProps }: AppProps) {
 
