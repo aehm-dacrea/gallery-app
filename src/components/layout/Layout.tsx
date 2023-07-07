@@ -1,4 +1,5 @@
 import type { ReactNode, FC } from 'react';
+import Head from 'next/head';
 import { NavigationBar } from "@/components/navigationBar";
 import styles from './Layout.module.css';
 
@@ -10,6 +11,10 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Virtosu Art Gallery</title>
+        <meta property="og:title" content="Virtosu Art Gallery" key="title" />
+      </Head>
       <NavigationBar />
       {children}
     </div>
