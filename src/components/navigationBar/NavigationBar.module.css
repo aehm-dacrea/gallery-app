@@ -6,17 +6,19 @@
   position: relative;
 }
 
-.logo {
-  /* align-self: center; */
-}
-
 .homeLink {
+  display: flex;
   text-align: left;
   position: absolute;
   font-size: 14px;
   top: 50%;
   transform: translateY(-50%);
   left: 16px;
+}
+
+.homeIcon {
+  font-size: 20px;
+  color: #d1af78;
 }
 
 .languageLink {

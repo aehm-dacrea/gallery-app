@@ -1,12 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from "next/router";
+import { PiHouse } from "react-icons/pi";
 import LogoCentral from "@/assets/logo-central.svg";
 import styles from "./NavigationBar.module.css";
-
-interface NavigationBarProps {
-  
-}
 
 export const NavigationBar = () => {
   const router = useRouter();
@@ -19,10 +16,9 @@ export const NavigationBar = () => {
 
   return (
     <div className={styles.navigationBar}>
-      <Link className={styles.homeLink} href="/">Home</Link>
+      <Link className={styles.homeLink} href="/"><PiHouse className={styles.homeIcon} /></Link>
       <Image className={styles.logo} src={LogoCentral} alt="Virtosu Gallery Logo" />
       <span className={styles.languageLink} onClick={updateLocale}>{router.locale === 'en-US' ? 'Ro' : 'En'}</span>
-      {/* <Link className={styles.languageLink} href="#" >Ro</Link> */}
     </div>
   );
 };
