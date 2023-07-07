@@ -24,7 +24,7 @@ const DisplayTrack = ({
     }
 
     const seconds = audioRef.current.duration;
-    setDuration(seconds);
+    setDuration(Math.floor(seconds));
     progressBarRef.current.max = `${Math.floor(seconds)}`;
   };
 
