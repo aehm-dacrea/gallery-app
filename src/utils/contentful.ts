@@ -195,7 +195,7 @@ export async function getBigPaintingFragments(): Promise<BigPaintingFragment[]> 
   const { data } = await apolloClient.query({
     query: gql`
       query GetBigPaintingFragments {
-        bigPaintingFragmentCollection (order: paintingId_ASC) {
+        bigPaintingFragmentCollection (order: paintingId_ASC, limit: 1000) {
           items {
             title,
             image {
