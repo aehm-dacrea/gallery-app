@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { type BigPaintingFragment, getBigPainting, getBigPaintingFragments } from "@/utils/contentful";
 import { PaintingTile } from "@/components/paintingTile";
 import { NavigationBar } from "@/components/navigationBar";
-import styles from './DivinityADN.module.css';
+import styles from './DivinityDNA.module.css';
 
 export default function Room({ bigPainting, bigPaintingFragments }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [mouseClickPosition, setMouseClickPosition] = useState<{ x: number; y: number; }>({ x: 0, y: 0});
