@@ -61,8 +61,6 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<{ bigPainti
   const bigPainting = await getBigPainting();
   const bigPaintingFragments = await getBigPaintingFragments();
 
-  console.log('bigPaintingFragments', bigPaintingFragments);
-
   return {
     props: { bigPainting, bigPaintingFragments },
   };
