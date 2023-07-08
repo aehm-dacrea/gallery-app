@@ -6,12 +6,14 @@ import {
   getPainting,
   Painting,
 } from "@/utils/contentful";
+import { NavigationBar } from "@/components/navigationBar";
 
 const Painting = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { title, paintingId, audio } = props;
 
   return (
     <>
+      <NavigationBar />
       <Head>
         <title>Virtosu Art Gallery - {title}</title>
         <meta

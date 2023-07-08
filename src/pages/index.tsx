@@ -1,3 +1,9 @@
+import { NavigationBar } from "@/components/navigationBar";
+
 export default function Page() {
-  return <h1>Homepage</h1>
+  return (
+  <>
+    <NavigationBar />
+    <h1>Homepage</h1>)
+  </>
 }

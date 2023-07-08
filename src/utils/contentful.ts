@@ -37,6 +37,14 @@ interface AllPaintingsData {
   }
 }
 
+export interface BigPaintingFragment {
+  title: string;
+  image: { url: string; };
+  paintingId: number;
+  coordinateX: number;
+  coordinateY: number;
+}
+
 export async function getAllRooms(): Promise<Room[]> {
   const { data } = await apolloClient.query<AllRoomsData>({
     query: gql`
@@ -181,4 +189,26 @@ export async function getBigPainting() {
   });
 
   return data.asset;
+}
+
+export async function getBigPaintingFragments(): Promise<BigPaintingFragment[]> {
+  const { data } = await apolloClient.query({
+    query: gql`
+      query GetBigPaintingFragments {
+        bigPaintingFragmentCollection (order: paintingId_ASC) {
+          items {
+            title,
+            image {
+              url
+            },
+            paintingId,
+            coordinateX,
+            coordinateY
+          }
+        }
+      }
+    `
+  });
+
+  return data.bigPaintingFragmentCollection.items;
 }

@@ -1,5 +1,6 @@
 .container {
-  position: relative;
+  position: fixed;
+  top: var(--nav-bar-height);
 
   --clip-path-X: 0;
   --clip-path-Y: 0;
@@ -12,7 +13,7 @@
   left: 0;
   width: 100%;
   height: auto;
-  filter: brightness(0.3);
+  filter: var(--filter-brightness);
 }
 
 
@@ -21,5 +22,9 @@
   position: relative;
   width: 100%;
   height: auto;
-  clip-path: circle(50px at var(--clip-path-X) var(--clip-path-Y));
+  clip-path: circle(3.83% at var(--clip-path-X) var(--clip-path-Y));
+}
+
+.tileContainer {
+  padding-top: 8px;
 }
