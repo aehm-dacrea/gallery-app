@@ -4,6 +4,6 @@ export default function Page() {
   return (
   <>
     <NavigationBar />
-    <h1>Homepage</h1>)
-  </>
+    <h1>Homepage</h1>
+  </>)
 }
