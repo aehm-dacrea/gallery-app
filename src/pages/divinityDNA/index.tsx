@@ -10,11 +10,8 @@ export default function Room({ bigPainting, bigPaintingFragments }: InferGetStat
   const [mouseClickPosition, setMouseClickPosition] = useState<{ x: number; y: number; }>({ x: 0, y: 0});
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const onImageClick = (event: MouseEvent<HTMLImageElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
-    setMouseClickPosition(() => ({ x, y }));
+  const onImageClick = () => {
+    containerRef.current?.style.removeProperty('--filter-brightness');
   }
 
   const setPaddingTop = () => {
