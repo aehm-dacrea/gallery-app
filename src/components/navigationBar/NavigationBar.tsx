@@ -11,6 +11,10 @@ export const NavigationBar = ({ isSticky = false }: { isSticky?: boolean; }) => 
   const { pathname, asPath, query } = router;
   const navigationBarRef = useRef<HTMLDivElement>(null);
 
+  const setCookie = (locale: 'en-US' | 'ro-MD') => {
+    document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`;
+  }
+
   useEffect(() => {
     const height = navigationBarRef.current?.getBoundingClientRect().height || 0;
     document.documentElement.style.setProperty('--nav-bar-height', `${height}px`);
@@ -18,6 +22,7 @@ export const NavigationBar = ({ isSticky = false }: { isSticky?: boolean; }) => 
 
   const updateLocale = () => {
     const nextLocale = router.locale === 'en-US' ? 'ro-MD' : 'en-US';
+    setCookie(nextLocale);
     router.push({ pathname, query }, asPath, { locale: nextLocale });
   }
 
