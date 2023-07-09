@@ -1,0 +1,1 @@
+export { BigTile } from './BigTile';

@@ -3,8 +3,8 @@ import { Open_Sans, Frank_Ruhl_Libre } from 'next/font/google';
 import { Layout } from "@/components/layout/Layout";
 import "@/styles/globals.css";
 
-const openSans = Open_Sans({ subsets: ['latin'] });
-const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ['latin'], weight: "400" });
+export const openSans = Open_Sans({ subsets: ['latin'] });
+export const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ['latin'], weight: "400" });
 
 export default function App({ Component, pageProps }: AppProps) {
 

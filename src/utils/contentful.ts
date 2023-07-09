@@ -45,11 +45,11 @@ export interface BigPaintingFragment {
   coordinateY: number;
 }
 
-export async function getAllRooms(): Promise<Room[]> {
+export async function getAllRooms(locale = 'en-US'): Promise<Room[]> {
   const { data } = await apolloClient.query<AllRoomsData>({
     query: gql`
-      query GetAllRooms {
-        roomCollection(order: id_ASC) {
+      query GetAllRooms($locale: String!) {
+        roomCollection(order: id_ASC, locale: $locale) {
           items {
             id,
             name,
@@ -60,6 +60,9 @@ export async function getAllRooms(): Promise<Room[]> {
         }
       }
     `,
+    variables: {
+      locale
+    }
   });
 
   return data.roomCollection.items;
@@ -177,7 +180,7 @@ export async function getPainting(roomId: number, paintingId: number): Promise<P
   return data.paintingCollection.items[0];
 }
 
-export async function getBigPainting() {
+export async function getBigPainting(): Promise<{ url: string }> {
   const { data } = await apolloClient.query({
     query: gql`
       query {
