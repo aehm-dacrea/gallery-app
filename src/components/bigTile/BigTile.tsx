@@ -27,7 +27,7 @@ export const BigTile = ({
           }
         }}
       > 
-        {imageUrl ? <Image className={styles.image} src={imageUrl} alt={title} fill /> : null}
+        {imageUrl ? <Image className={styles.image} src={imageUrl} alt={title} fill priority /> : null}
         <h3 className={`${styles.title}`}>
           {title}
         </h3>

@@ -38,9 +38,9 @@ export default function Room({ bigPainting, bigPaintingFragments }: InferGetStat
   return <>
     <NavigationBar isSticky={true} />
     <div ref={containerRef} className={styles.container} onClick={onImageClick}>
-      <Image className={styles.rearImage} width={2560} height={612.85} src={bigPainting.url} alt="Divinity's ADN" />
+      <Image className={styles.rearImage} width={2560} height={612.85} src={bigPainting.url} alt="Divinity's ADN" priority />
       <div className={styles.backdrop} />
-      <Image className={styles.bigImage} width={2560} height={612.85} src={bigPainting.url} alt="Divinity's ADN" />
+      <Image className={styles.bigImage} width={2560} height={612.85} src={bigPainting.url} alt="Divinity's ADN" priority />
     </div>
     <div className={styles.tileContainer}>
       {bigPaintingFragments.map((fragment, i) => (

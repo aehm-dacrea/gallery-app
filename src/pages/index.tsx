@@ -44,8 +44,6 @@ export async function getStaticProps({
   const rooms = await getAllRooms(locale);
   const bigPainting = await getBigPainting();
 
-  console.log(bigPainting);
-
   return {
     props: { rooms, bigPainting },
   };
