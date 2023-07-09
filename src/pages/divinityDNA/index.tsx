@@ -23,6 +23,8 @@ export default function Room({ bigPainting, bigPaintingFragments }: InferGetStat
     setPaddingTop();
 
     window.addEventListener('resize', setPaddingTop);
+
+    return () => document.documentElement.style.setProperty('--body-padding-top', `0px`);
   }, []);
 
   useEffect(() => {
