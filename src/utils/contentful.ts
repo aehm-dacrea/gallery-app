@@ -49,7 +49,7 @@ export async function getAllRooms(): Promise<Room[]> {
   const { data } = await apolloClient.query<AllRoomsData>({
     query: gql`
       query GetAllRooms {
-        roomCollection {
+        roomCollection(order: id_ASC) {
           items {
             id,
             name,
