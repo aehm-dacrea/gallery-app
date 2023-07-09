@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import LogoSquare from "@/assets/logo-square.jpeg";
-import { openSans } from '@/pages/_app';
 import styles from "./BigTile.module.css";
 
 interface BigTileProps {
   imageUrl?: string;
   title: string;
   link: string;
+  className?: string;
   onClick?: () => void;
 }
 
@@ -15,10 +14,11 @@ export const BigTile = ({
   imageUrl,
   title,
   link,
+  className,
   onClick,
 }: BigTileProps) => {
   return (
-    <Link href={link}>
+    <Link href={link} className={className}>
       <div
         className={styles.bigTile}
         onClick={() => {

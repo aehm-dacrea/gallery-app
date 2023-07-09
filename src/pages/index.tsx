@@ -6,6 +6,7 @@ import {
   getBigPainting,
 } from "@/utils/contentful";
 import { BigTile } from "@/components/bigTile";
+import bigTileStyles from '@/components/bigTile/BigTile.module.css';
 import styles from "./Homepage.module.css";
 
 export default function Page({
@@ -23,6 +24,7 @@ export default function Page({
           link="/divinityDNA"
           title="Divinity's DNA"
           imageUrl={bigPainting.url}
+          className={bigTileStyles.titleShadow}
         />
         {rooms.map((room, i) => (
           <BigTile link={`/room/${room.id}`} title={room.name} key={i} />
