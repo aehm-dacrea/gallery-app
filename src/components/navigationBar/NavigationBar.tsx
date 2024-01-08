@@ -6,12 +6,22 @@ import { PiHouse } from "react-icons/pi";
 import LogoCentral from "@/assets/logo-central.svg";
 import styles from "./NavigationBar.module.css";
 
+type Locale = 'en-US' | 'ro-MD' | 'ru-MD';
+
 export const NavigationBar = ({ isSticky = false }: { isSticky?: boolean; }) => {
   const router = useRouter();
   const { pathname, asPath, query } = router;
   const navigationBarRef = useRef<HTMLDivElement>(null);
 
-  const setCookie = (locale: 'en-US' | 'ro-MD') => {
+  const localeMap = {
+    'en-US': { nextLocale: 'ro-MD', localeText: 'En' },
+    'ro-MD': { nextLocale: 'ru-MD', localeText: 'Ro' },
+    'ru-MD': { nextLocale: 'en-US', localeText: 'Ru' },
+  }
+  
+  const { nextLocale, localeText } = localeMap[router.locale as Locale];
+
+  const setCookie = (locale: Locale) => {
     document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`;
   }
 
@@ -21,8 +31,7 @@ export const NavigationBar = ({ isSticky = false }: { isSticky?: boolean; }) => 
   }, []);
 
   const updateLocale = () => {
-    const nextLocale = router.locale === 'en-US' ? 'ro-MD' : 'en-US';
-    setCookie(nextLocale);
+    setCookie(nextLocale as Locale);
     router.push({ pathname, query }, asPath, { locale: nextLocale });
   }
 
@@ -30,7 +39,7 @@ export const NavigationBar = ({ isSticky = false }: { isSticky?: boolean; }) => 
     <div ref={navigationBarRef} className={`${styles.navigationBar} ${isSticky ? styles.sticky : ''}`}>
       <Link className={styles.homeLink} href="/"><PiHouse className={styles.homeIcon} /></Link>
       <Image className={styles.logo} src={LogoCentral} alt="Virtosu Gallery Logo" />
-      <span className={styles.languageLink} onClick={updateLocale}>{router.locale === 'en-US' ? 'Ro' : 'En'}</span>
+      <span className={styles.languageLink} onClick={updateLocale}>{localeText}</span>
     </div>
   );
 };

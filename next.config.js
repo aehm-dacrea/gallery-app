@@ -14,7 +14,7 @@ const nextConfig = {
     ],
   },
   i18n: {
-    locales: ['en-US', 'ro-MD'],
+    locales: ['en-US', 'ro-MD', 'ru-MD'],
     defaultLocale: 'en-US',
   },
   async redirects() {
