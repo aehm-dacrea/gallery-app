@@ -15,7 +15,7 @@ export default function Room({ bigPainting, bigPaintingFragments }: InferGetStat
   }
 
   const setPaddingTop = () => {
-    const height = screen.width * 612.85 / 2560 + 65.5;
+    const height = window.innerWidth * 612.85 / 2560 + 65.5;
     document.documentElement.style.setProperty('--body-padding-top', `${height}px`);
   }
 
